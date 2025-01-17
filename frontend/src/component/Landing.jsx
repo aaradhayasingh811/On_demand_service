@@ -17,15 +17,15 @@ const Landing = () => {
         </div>
 
         {/* Text and Call to Action Section */}
-        <div className="text-center sm:text-left sm:ml-8 ">
+        <div className="text-center sm:text-left  flex flex-col items-start justify-start h-full gap-y-10 ">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#2f4f4f] my-4 text-center">
             Discover Professional Services Near You
           </h2>
-          <p className="text-lg sm:text-xl font-light text-[#555] mb-6">
+          <p className="text-lg sm:text-xl text-center font-light text-[#555] mb-6">
             Securely hire vetted and qualified workers for your projects with confidence and peace of mind.
           </p>
 
-          <div className="flex justify-center sm:justify-start gap-4">
+          <div className="flex justify-center mx-auto sm:justify-between gap-4">
             <a
               href="/login"
               className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
@@ -36,7 +36,7 @@ const Landing = () => {
               href="/login"
               className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
             >
-              Become a Service Provider
+              Become a Provider
             </a>
           </div>
         </div>
