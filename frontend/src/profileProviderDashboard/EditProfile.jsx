@@ -52,7 +52,7 @@ const EditProfile = ({ profileDetail }) => {
 
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/v1/provider-update-profile/${profileDetail.email}`,
+        `${process.env.HOST_URL}/api/v1/provider-update-profile/${profileDetail.email}`,
         formData,
         {
           headers: {

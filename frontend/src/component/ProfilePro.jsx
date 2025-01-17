@@ -68,7 +68,7 @@ const ProfilePro = ({ profileDetail }) => {
     console.log(formData)
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/v1/provider-update-profile/${profileDetail.provider.email}`,
+        `${process.env.HOST_URL}/api/v1/provider-update-profile/${profileDetail.provider.email}`,
         formData,
         {
           headers: {

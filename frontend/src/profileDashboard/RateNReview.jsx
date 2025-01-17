@@ -25,7 +25,7 @@ const RateNReview = () => {
     const fetchBookings = async () => {
       try {
         setLoading(true); // Start loading
-        const res = await axios.get(`http://localhost:3000/api/v1/all-booking/${email}`);
+        const res = await axios.get(`${process.env.HOST_URL}/api/v1/all-booking/${email}`);
         const successfulBookings = res.data.filter(
           (booking) => booking.status === "Success"
         );
@@ -145,7 +145,7 @@ const RateNReview = () => {
 
       try {
         console.log(Data)
-        await axios.patch("http://localhost:3000/api/v1/rating", Data);
+        await axios.patch("${process.env.HOST_URL}/api/v1/rating", Data);
         toast.success(" Rating and Review submitted!", {
           position: "top-right",
           autoClose: 3000,

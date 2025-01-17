@@ -30,7 +30,7 @@ const AllProviderAppointment = () => {
   //   const fetchProfileData = async () => {
   //     try {
   //       const response = await axios.get(
-  //         `http://localhost:3000/api/v1/show-profile/${email}`
+  //         `${process.env.HOST_URL}/api/v1/show-profile/${email}`
   //       );
   //       setProfileData(response.data);
 
@@ -43,7 +43,7 @@ const AllProviderAppointment = () => {
   //   const fetchBookings = async () => {
   //     try {
   //       const response = await axios.get(
-  //         `http://localhost:3000/api/v1/provider-all-appointment/${email}`
+  //         `${process.env.HOST_URL}/api/v1/provider-all-appointment/${email}`
   //       );
   //       setBooking(response.data);
   //       console.log(response.data)
@@ -63,7 +63,7 @@ const AllProviderAppointment = () => {
     const fetchProfileData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/show-profile/${email}`
+          `${process.env.HOST_URL}/api/v1/show-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {
@@ -74,7 +74,7 @@ const AllProviderAppointment = () => {
     const fetchBookings = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/provider-all-appointment/${email}`
+          `${process.env.HOST_URL}/api/v1/provider-all-appointment/${email}`
         );
         setBooking(response.data);
         setFilteredBookings(response.data); // Initial state

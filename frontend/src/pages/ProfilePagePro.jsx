@@ -17,7 +17,7 @@ const ProfilePagePro = () => {
         setLoading(true);
         setError(null);
         const response = await axios.get(
-          `http://localhost:3000/api/v1/provider-profile/${email}`
+          `${process.env.HOST_URL}/api/v1/provider-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {

@@ -34,9 +34,9 @@ const BookingPro = React.memo(({ item }) => {
       console.log(Data)
       console.log(sendData)
 
-      const response = await axios.patch(`http://localhost:3000/api/v1/change-status`,Data);
+      const response = await axios.patch(`${process.env.HOST_URL}/api/v1/change-status`,Data);
       if(stat === "Success"){
-        await axios.post(`http://localhost:3000/api/v1/send-email`,sendData);
+        await axios.post(`${process.env.HOST_URL}/api/v1/send-email`,sendData);
         console.log(sendData)
         toast.success('🦄 Confirmation mail sent Successfully!', {
           position: "top-right",
