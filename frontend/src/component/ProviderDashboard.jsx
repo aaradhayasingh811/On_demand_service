@@ -27,7 +27,7 @@ const ProviderDashboard = () => {
       } catch (error) {
         console.error("Error fetching availability status:", error);
       } finally {
-        setLoading(false); // Reset loading state after the request completes
+        setLoading(false); 
       }
     };
 
@@ -39,7 +39,7 @@ const ProviderDashboard = () => {
   };
 
   const handletomakeAvailable = async () => {
-    setLoading(true); // Set loading to true when the request starts
+    setLoading(true); 
     try {
       const response = await axios.patch(
         `https://on-demand-service-m5nh.onrender.com/api/v1/is-available/${email}`

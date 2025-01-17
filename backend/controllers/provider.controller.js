@@ -90,10 +90,10 @@ const allAppointmentController = async (req, res) => {
       const mail = eachUser.who;
       const user = await User.findOne({ email: mail });
       if(user.status){
-        allList.push({user,status: eachUser.status , bookingid: eachUser._id });
+        allList.push({user,status: eachUser.status , bookingid: eachUser._id,booking : eachUser });
 
       }
-      allList.push({user, bookingid: eachUser._id , status: eachUser.status  });
+      allList.push({user, bookingid: eachUser._id , status: eachUser.status ,booking : eachUser  });
 
     }
 
