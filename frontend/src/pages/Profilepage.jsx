@@ -27,7 +27,7 @@ const Profilepage = () => {
     const profileLoader = async () => {
       try {
         const response = await axios.get(
-          `${process.env.HOST_URL}/api/v1/show-profile/${email}`
+          `${import.meta.env.HOST_URL}/api/v1/show-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {

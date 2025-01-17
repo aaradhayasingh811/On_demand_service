@@ -10,7 +10,7 @@ const NavPro = ({ val1, val2, val3, val4, email, people }) => {
   const logoutButton = async () => {
     try {
       const res = await axios.get(
-        `${process.env.HOST_URL}/api/v1/logout/${email}`
+        `${import.meta.env.HOST_URL}/api/v1/logout/${email}`
       );
       
       toast.success('🦄 Logged Out Successfully!', {

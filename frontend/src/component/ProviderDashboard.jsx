@@ -20,7 +20,7 @@ const ProviderDashboard = () => {
     setLoading(true); // Set loading to true when the request starts
     try {
       const response = await axios.patch(
-        `${process.env.HOST_URL}/api/v1/is-available/${email}`
+        `${import.meta.env.HOST_URL}/api/v1/is-available/${email}`
       );
       console.log(response.data)
       if(response.data.provider.isAvaliable){

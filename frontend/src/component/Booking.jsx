@@ -32,7 +32,7 @@ const Booking = () => {
         setLoading(true);
         const Work = titleCase(work);
         const response = await axios.get(
-          `${process.env.HOST_URL}/api/v1/show-booking/${Work}`
+          `${import.meta.env.HOST_URL}/api/v1/show-booking/${Work}`
         );
         setData(response.data);
       } catch (err) {
@@ -116,7 +116,7 @@ const Booking = () => {
   //     try {
   //       console.log(Data);
   //       // Uncomment to send booking request to the server
-  //       await axios.post(`${process.env.HOST_URL}/api/v1/new-booking`, Data);
+  //       await axios.post(`${import.meta.env.HOST_URL}/api/v1/new-booking`, Data);
   //       toast.success("🦄 Booked Successfully!", {
   //         position: "top-right",
   //         autoClose: 3000,
@@ -232,7 +232,7 @@ const Booking = () => {
       try {
         console.log(Data);
         // Uncomment to send booking request to the server
-        await axios.post(`${process.env.HOST_URL}/api/v1/new-booking`, Data);
+        await axios.post(`${import.meta.env.HOST_URL}/api/v1/new-booking`, Data);
         toast.success("✔️ Booked Successfully!", {
           position: "top-right",
           autoClose: 3000,

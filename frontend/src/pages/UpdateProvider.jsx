@@ -51,7 +51,7 @@ const UpdateProvider = ({ show }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${process.env.HOST_URL}/api/v1/provider-details/${email}`,
+        `${import.meta.env.HOST_URL}/api/v1/provider-details/${email}`,
         formData
       );
       toast.success("🦄 Details Added Successfully!", {

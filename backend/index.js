@@ -7,8 +7,8 @@ import {app} from "../backend/app.js"
 import {connection} from "../backend/config/connection.js"
 
 connection().then(()=>{
-    app.listen(process.env.PORT,()=>{
-        console.log('server is running on port',process.env.PORT);
+    app.listen(import.meta.env.PORT,()=>{
+        console.log('server is running on port',import.meta.env.PORT);
     })
 }).catch((err)=>{
     console.log(err)

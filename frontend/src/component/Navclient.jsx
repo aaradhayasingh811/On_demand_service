@@ -15,7 +15,7 @@ const Navclient = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const API_URL = `${process.env.HOST_URL}`;
+  const API_URL = `${import.meta.env.HOST_URL}`;
 
   const logoutButton = async () => {
     setIsLoading(true);

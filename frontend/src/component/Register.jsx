@@ -59,7 +59,7 @@ const Register = () => {
 
     try {
       setIsSubmitting(true); // Disable the button during submission
-      const response = await axios.post(`${process.env.HOST_URL}/api/v1/register`, formDataToSend, {
+      const response = await axios.post(`${import.meta.env.HOST_URL}/api/v1/register`, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

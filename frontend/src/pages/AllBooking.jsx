@@ -28,7 +28,7 @@ const AllBooking = () => {
     const fetchProfileData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.HOST_URL}/api/v1/show-profile/${email}`
+          `${import.meta.env.HOST_URL}/api/v1/show-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {
@@ -40,7 +40,7 @@ const AllBooking = () => {
     const fetchBookings = async () => {
       try {
         const response = await axios.get(
-          `${process.env.HOST_URL}/api/v1/all-booking/${email}`
+          `${import.meta.env.HOST_URL}/api/v1/all-booking/${email}`
         );
         setBooking(response.data);
         setFilteredBookings(response.data);

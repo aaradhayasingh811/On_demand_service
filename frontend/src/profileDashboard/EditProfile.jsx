@@ -45,7 +45,7 @@ const EditProfile = ({ profileDetail }) => {
 
     try {
       const response = await axios.patch(
-        `${process.env.HOST_URL}/api/v1/update-profile/${profileDetail.email}`,
+        `${import.meta.env.HOST_URL}/api/v1/update-profile/${profileDetail.email}`,
         formData,
         {
           headers: {
