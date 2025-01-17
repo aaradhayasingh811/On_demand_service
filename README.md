@@ -80,35 +80,29 @@ Routes are defined in [`backend/routes/user.route.js`](backend/routes/user.route
 
 #### User Routes
 
-- `POST /api/user/register`: Registers a new user.
+- `POST /api/user/register`: Registers a new user with an avatar.
 - `POST /api/user/login`: Logs in a user and returns a token.
-- `GET /api/user/logout`: Logs out a user.
-- `GET /api/user/refresh_token`: Refreshes the access token.
-- `GET /api/user/infor`: Retrieves user information.
-- `PATCH /api/user/update`: Updates user information.
-- `PATCH /api/user/update_password`: Updates user password.
-- `POST /api/user/forgot`: Sends a password reset email.
-- `POST /api/user/reset`: Resets the user password.
-
-#### Booking Routes
-
-- `POST /api/booking`: Creates a new booking.
-- `GET /api/booking`: Retrieves all bookings.
-- `GET /api/booking/:id`: Retrieves a specific booking by ID.
-- `PATCH /api/booking/:id`: Updates a booking by ID.
-- `DELETE /api/booking/:id`: Deletes a booking by ID.
+- `GET /api/user/logout/:email`: Logs out a user by email.
+- `GET /api/user/show-profile/:email`: Retrieves user profile information by email.
+- `PATCH /api/user/update-profile/:email`: Updates user profile information by email with an avatar.
+- `POST /api/user/new-booking`: Creates a new booking.
+- `GET /api/user/all-booking/:email`: Retrieves all bookings for a user by email.
+- `PATCH /api/user/rating`: Rates a provider.
+- `GET /api/user/show-booking/:work`: Retrieves bookings by work type.
 
 #### Provider Routes
 
-- `POST /api/provider`: Registers a new provider.
-- `GET /api/provider`: Retrieves all providers.
-- `GET /api/provider/:id`: Retrieves a specific provider by ID.
-- `PATCH /api/provider/:id`: Updates a provider by ID.
-- `DELETE /api/provider/:id`: Deletes a provider by ID.
+- `POST /api/provider/provider-details/:email`: Registers a new provider by email.
+- `GET /api/provider/provider-all-appointment/:email`: Retrieves all appointments for a provider by email.
+- `GET /api/provider/provider-profile/:email`: Retrieves provider profile information by email.
+- `PATCH /api/provider/provider-update-profile/:email`: Updates provider profile information by email with an avatar.
+- `PATCH /api/provider/is-available/:email`: Updates provider availability status by email.
+- `PATCH /api/provider/change-status`: Changes the status of a booking.
+- `GET /api/provider/provider-review/:email`: Retrieves reviews for a provider by email.
 
 #### Email Routes
 
-- `POST /api/email/send`: Sends an email.
+- `POST /api/email/send-email`: Sends an email.
 
 ## Frontend
 
