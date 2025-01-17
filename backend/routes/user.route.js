@@ -4,7 +4,7 @@ import { upload } from "../middlewares/multer.middleware.js";
 
 import { newBookingController ,showAllBookingController , rateProviderController , changeStatusController} from "../controllers/booking.controllers.js";
 
-import { providerRegisterController ,allAppointmentController ,profileProviderController ,updateProviderDetailsController , makeAvailableController ,getReviewController} from "../controllers/provider.controller.js";
+import { providerRegisterController ,allAppointmentController ,profileProviderController ,updateProviderDetailsController , makeAvailableController ,getReviewController ,getChartDataController} from "../controllers/provider.controller.js";
 import { sendEmail } from "../email.js";
 import { sendmailController } from "../controllers/email.controller.js";
 const router = Router();
@@ -29,6 +29,7 @@ router.route('/provider-profile/:email').get(profileProviderController);
 router.route('/provider-update-profile/:email').patch(upload.single("avatar"),updateProviderDetailsController);
 router.route('/is-available/:email').patch(makeAvailableController);
 router.route('/change-status').patch(changeStatusController);
+router.route('/analysis-provider/:email').get(getChartDataController);
 
 // to get review
 router.route('/provider-review/:email').get(getReviewController);

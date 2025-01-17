@@ -241,11 +241,60 @@ const getReviewController = async(req,res)=>{
   }
 }
 
+const getChartDataController = async(req,res)=>{
+  try {
+    const { email } = req.params;
+    if(!email){
+      return res.status(400).json({message: "Email is required."})
+    }
+    const provider = await Provider.findOne({ email });
+    if(!provider){
+      return res.status(404).json({message: "Provider doesn't exist."})
+    }
+    const data = await Booking.find({ whom: provider.number });
+    const chartData = [];
+    let failed = 0;
+    let success = 0;
+    let pending = 0;
+    for (const eachPro of data){
+      if(eachPro.status === "Success"){
+        success++;
+    }
+    else if(eachPro.status === "Failed"){
+      failed++;
+    }
+    else{
+      pending++;
+    }
+  }
+  chartData.push({
+    label: "Success",
+    data: success,
+
+  })
+  chartData.push({
+    label: "Failed",
+    data: failed,
+
+  })
+  chartData.push({
+    label: "Pending",
+    data: pending,
+  })
+  return res.json(chartData);
+
+  } catch (error) {
+    console.error("Error in getChartDataController:", error.message);
+    return res.status(500).json({ message: "An internal server error occurred." });
+  }
+}
+
 export {
   providerRegisterController,
   allAppointmentController,
   profileProviderController,
   updateProviderDetailsController,
   makeAvailableController,
-  getReviewController
+  getReviewController,
+  getChartDataController
 };
