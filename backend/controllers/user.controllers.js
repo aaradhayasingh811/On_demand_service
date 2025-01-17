@@ -210,6 +210,52 @@ const showGivenWorkData = async (req, res) => {
   }
 };
 
+const getChartClientDataController = async(req,res)=>{
+  try {
+    const { email } = req.params;
+    if(!email){
+      return res.status(400).json({message: "Email is required."})
+    }
+   
+    const data = await Booking.find({ who: email });
+    const chartData = [];
+    let failed = 0;
+    let success = 0;
+    let pending = 0;
+    for (const eachPro of data){
+      if(eachPro.status === "Success"){
+        success++;
+    }
+    else if(eachPro.status === "Failed"){
+      failed++;
+    }
+    else{
+      pending++;
+    }
+  }
+  chartData.push({
+    label: "Success",
+    data: success,
+
+  })
+  chartData.push({
+    label: "Failed",
+    data: failed,
+
+  })
+  chartData.push({
+    label: "Pending",
+    data: pending,
+  })
+  return res.json(chartData);
+
+  } catch (error) {
+    console.error("Error in getChartDataController:", error.message);
+    return res.status(500).json({ message: "An internal server error occurred." });
+  }
+}
+
+
 export {
   registerHandler,
   loginController,
@@ -217,4 +263,5 @@ export {
   updateProfileController,
   logoutController,
   showGivenWorkData,
+  getChartClientDataController
 };
