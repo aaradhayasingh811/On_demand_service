@@ -9,7 +9,7 @@ import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 const BookingComponent = ({ item }) => {
   const provider = item.provider;
   const status = item.status;
-  const dateTimeString = item.provider.createdAt;
+  const dateTimeString = item.booking.createdAt;
   const dateObject = new Date(dateTimeString);
   const date = dateObject.toISOString().split("T")[0];
   const time = dateObject.toISOString().split("T")[1].split(".")[0];

@@ -36,7 +36,7 @@ const showAllBookingController = async (req, res) => {
       const num = eachPro.whom;
       const provider = await Provider.findOne({ number: num });
       if(eachPro.status){
-        allList.push({provider , status: eachPro.status , bookingid: eachPro._id,  })
+        allList.push({provider , status: eachPro.status , bookingid: eachPro._id,  booking : eachPro })
       }
     
     }
