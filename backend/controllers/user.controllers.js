@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { User } from "../models/user.model.js";
 import { Provider } from "../models/provider.model.js";
 import { uploadCloudinary } from "../utils/cloudinary.js";
+import {Booking} from "../models/booking.model.js";
 import bcrypt from "bcryptjs";
 
 const generateAccessAndRefereshTokens = async (userId) => {
@@ -218,6 +219,9 @@ const getChartClientDataController = async(req,res)=>{
     }
    
     const data = await Booking.find({ who: email });
+    if(data.length === 0){
+      return res.status(404).json({message: "No data found."})
+    }
     const chartData = [];
     let failed = 0;
     let success = 0;
