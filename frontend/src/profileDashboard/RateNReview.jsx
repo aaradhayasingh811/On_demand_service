@@ -145,7 +145,7 @@ const RateNReview = () => {
 
       try {
         console.log(Data)
-        await axios.patch("${process.env.HOST_URL}/api/v1/rating", Data);
+        await axios.patch(`${process.env.HOST_URL}/api/v1/rating`, Data);
         toast.success(" Rating and Review submitted!", {
           position: "top-right",
           autoClose: 3000,
