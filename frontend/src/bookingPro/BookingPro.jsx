@@ -5,6 +5,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import TimerOutlinedIcon from "@mui/icons-material/TimerOutlined";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 import axios from "axios";
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import { Bounce, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 
@@ -106,14 +107,14 @@ const BookingPro = ({ item }) => {
 
   // Determine status color
   const statusColors = {
-    Pending: "bg-yellow-500",
+    Pending: "bg-blue-500",
     Failed: "bg-red-500",
     Success: "bg-green-600",
   };
   const statusClass = statusColors[status] || "bg-gray-500";
 
   return (
-    <div className="w-full mx-auto bg-white shadow-lg rounded-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col md:grid md:grid-cols-2 md:gap-4">
+    <div className="w-full mx-auto bg-white shadow-lg rounded-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col md:grid md:grid-cols-2 md:gap-2">
       <div className="flex justify-center items-center flex-col">
         <img
           src={provider.avatar}
@@ -126,7 +127,7 @@ const BookingPro = ({ item }) => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-between gap-y-4">
+      <div className="flex flex-col justify-between gap-y-1">
         <div className="flex items-center text-gray-600 mb-1">
           <WorkOutlineOutlinedIcon className="text-gray-500 text-lg mr-2" />
           <p className="text-base truncate">{provider.people}</p>
@@ -141,6 +142,10 @@ const BookingPro = ({ item }) => {
           <DateRangeOutlinedIcon className="text-gray-500 text-lg mr-2" />
           <p className="text-base truncate">{formattedDate}</p>
         </div>
+        <div className="flex items-center text-gray-600 mb-1">
+          <AccessTimeOutlinedIcon className="text-gray-500 text-lg mr-2" />
+          <p className="text-base truncate">{item.booking.hour}</p>
+        </div>
 
         <div className="flex items-center text-gray-600 mb-1">
           <TimerOutlinedIcon className="text-gray-500 text-lg mr-2" />
@@ -153,7 +158,7 @@ const BookingPro = ({ item }) => {
 
         <div className="flex justify-start">
           <p className={`${statusClass} px-3 py-1 text-white w-max rounded-full`}>
-            {status}
+            {status === "Pending" ? "In Progress" : status}
           </p>
         </div>
 

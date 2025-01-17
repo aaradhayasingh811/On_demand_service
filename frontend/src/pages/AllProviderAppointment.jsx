@@ -407,7 +407,7 @@ const AllProviderAppointment = () => {
               <p className="text-xl font-medium mt-4 text-center">
                 {profileData?.name}
               </p>
-              <p className="text-gray-500 text-base text-center">
+              <p className="text-gray-500 mb-20 text-base text-center">
                 {profileData?.username}
               </p>
             </div>

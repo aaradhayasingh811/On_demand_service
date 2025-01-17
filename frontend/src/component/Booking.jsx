@@ -233,7 +233,7 @@ const Booking = () => {
         console.log(Data);
         // Uncomment to send booking request to the server
         await axios.post(`https://on-demand-service-m5nh.onrender.com/api/v1/new-booking`, Data);
-        toast.success("✔️ Booked Successfully!", {
+        toast.success("You succesfully send the request for the slot! Waiting for Confirmation!", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,

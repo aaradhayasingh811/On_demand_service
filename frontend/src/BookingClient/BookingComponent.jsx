@@ -30,7 +30,7 @@ const BookingComponent = ({ item }) => {
   const formattedTime = `${hourIn12HourFormat}:${minutes} ${amPm}`;
 
   const statusColors = {
-    Pending: "bg-yellow-500",
+    Pending: "bg-blue-500",
     Failed: "bg-red-500",
     Success: "bg-green-600",
   };
@@ -38,9 +38,9 @@ const BookingComponent = ({ item }) => {
   const statusClass = statusColors[status] || "bg-gray-500"; // Default to gray if status is unknown
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col xl:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
       {/* Provider Info */}
-      <div className="flex flex-col items-center justify-center shadow-md rounded-lg p-4 bg-orange-50 w-full md:w-1/3">
+      <div className="flex flex-col items-center justify-center shadow-md rounded-lg p-4 bg-orange-50 w-full xl:mb-0 mb-2 xl:w-1/3">
         <div className="flex items-center justify-center">
           <img
             src={provider.avatar}
@@ -84,7 +84,7 @@ const BookingComponent = ({ item }) => {
         {/* Status */}
         <div className="flex justify-start w-full">
           <p className={`${statusClass} px-4 py-1 w-max text-white rounded-full font-semibold capitalize text-sm`}>
-            {status}
+            {status === "Pending" ? "In Progress" : status}
           </p>
         </div>
       </div>

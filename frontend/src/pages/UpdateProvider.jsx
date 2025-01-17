@@ -16,7 +16,7 @@ const UpdateProvider = ({ show }) => {
     number: "",
     isAvaliable: false,
     work: "",
-    price :""
+    price: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +26,6 @@ const UpdateProvider = ({ show }) => {
     };
 
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -34,34 +33,28 @@ const UpdateProvider = ({ show }) => {
 
   const handleOnChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type === "radio") {
-      setFormData({ ...formData, [name]: checked });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    setFormData({
+      ...formData,
+      [name]: type === "radio" ? checked : value,
+    });
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.number || !formData.work) {
+    if (!formData.number || !formData.work || !formData.price) {
       toast.error("❌ Please fill out all fields.");
       return;
     }
 
     setLoading(true);
     try {
-      const response = await axios.post(
+      await axios.post(
         `https://on-demand-service-m5nh.onrender.com/api/v1/provider-details/${email}`,
         formData
       );
-      toast.success("🦄 Details Added Successfully!", {
+      toast.success("🦄 Details Updated Successfully!", {
         position: "top-right",
         autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
         theme: "light",
         transition: Bounce,
       });
@@ -69,11 +62,6 @@ const UpdateProvider = ({ show }) => {
       toast.error("❌ Something went wrong! Please try again.", {
         position: "top-right",
         autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
         theme: "light",
         transition: Bounce,
       });
@@ -84,45 +72,42 @@ const UpdateProvider = ({ show }) => {
 
   return (
     <div
-      className={`bg-[#f3edeb] shadow-lg rounded flex justify-center items-center flex-col sm:flex-row ${
-        isLarge
-          ? "absolute top-[25%] lg:left-[25%] lg:w-[50vw] sm:h-[60vh]"
-          : "relative w-[100vw] h-[100%]"
+      className={`bg-white shadow-md rounded-lg p-6 flex flex-col sm:flex-row ${
+        isLarge ? "absolute top-20 left-1/2 transform -translate-x-1/2 w-3/5" : "w-full"
       }`}
     >
-      <div className="flex justify-center items-center">
-        <img src={update} alt="Update Illustration" className="w-96 h-96" />
+      {/* Left Section - Image */}
+      <div className="flex justify-center items-center p-4">
+        <img
+          src={update}
+          alt="Update Illustration"
+          className="w-full max-w-xs sm:max-w-md"
+        />
       </div>
-      <div className="flex justify-center items-center flex-col p-4 shadow-lg sm:me-14">
-        <div className="flex justify-end">
+
+      {/* Right Section - Form */}
+      <div className="flex flex-col w-full sm:pl-8">
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-semibold text-gray-700">Update Details 👋</h1>
           <button
-            className="flex w-max justify-end"
-            onClick={() => show(false)} 
+            className="bg-gray-200 w-max p-2 rounded-full hover:bg-gray-300"
+            onClick={() => show(false)}
           >
-            <CloseIcon
-              className=""
-              style={{
-                background: "#fff",
-                padding: "4px",
-                borderRadius: "50%",
-              }}
-            />
+            <CloseIcon />
           </button>
         </div>
-        <h1 className="text-3xl font-mono my-3 text-center sm:text-left">
-          Update Details 👋
-        </h1>
+
         <form
           onSubmit={handleOnSubmit}
-          className="flex flex-col items-center sm:items-start overflow-hidden"
+          className="mt-4 flex flex-col gap-4"
         >
           <TextField
             id="number"
             label="Phone Number"
-            variant="filled"
-            style={{ width: "60%", margin: "1% 0" }}
+            variant="outlined"
             name="number"
             type="number"
+            fullWidth
             required
             onChange={handleOnChange}
             value={formData.number}
@@ -130,70 +115,58 @@ const UpdateProvider = ({ show }) => {
           <TextField
             id="price"
             label="Price Charged"
-            variant="filled"
-            style={{ width: "60%", margin: "1% 0" }}
+            variant="outlined"
             name="price"
             type="number"
+            fullWidth
             required
             onChange={handleOnChange}
             value={formData.price}
           />
-          <br />
-          <FormControl
-            variant="filled"
-            style={{ width: "60%", margin: "1% 0" }}
-          >
+          <FormControl className="" style={{overflow:"hidden"}} variant="outlined">
             <Select
               id="work"
               name="work"
               value={formData.work}
               onChange={handleOnChange}
+              className=""
               displayEmpty
-              inputProps={{ "aria-label": "Select Work" }}
             >
-              <MenuItem value="" disabled>
+              <MenuItem value="" disabled className="w-max">
                 Select Work
               </MenuItem>
-              <MenuItem value="Cleaner">Cleaner</MenuItem>
-              <MenuItem value="Carpenter">Carpenter</MenuItem>
-              <MenuItem value="Mechanic">Mechanic</MenuItem>
-              <MenuItem value="Electrician">Electrician</MenuItem>
-              <MenuItem value="Plumber">Plumber</MenuItem>
+              <MenuItem value="Cleaner" className="">Cleaner</MenuItem>
+              <MenuItem value="Carpenter" className="">Carpenter</MenuItem>
+              <MenuItem value="Mechanic" className="">Mechanic</MenuItem>
+              <MenuItem value="Electrician" className="">Electrician</MenuItem>
+              <MenuItem value="Plumber" className="">Plumber</MenuItem>
             </Select>
           </FormControl>
-          <br />
-          <div className="flex text-base font-medium sm:justify-start justify-center">
-            <div className="flex items-center me-14 w-max">
+          <div className="flex gap-4 items-center">
+            <label className="flex items-center gap-2">
               <input
                 type="radio"
-                id="available-yes"
                 name="isAvaliable"
-                value={true}
+                value="true"
                 checked={formData.isAvaliable === true}
                 onChange={handleOnChange}
               />
-              <label htmlFor="available-yes" className="ml-2">
-                Yes
-              </label>
-            </div>
-            <div className="flex items-center w-max">
+              Available
+            </label>
+            <label className="flex items-center gap-2">
               <input
                 type="radio"
-                id="available-no"
                 name="isAvaliable"
-                value={false}
+                value="false"
                 checked={formData.isAvaliable === false}
                 onChange={handleOnChange}
               />
-              <label htmlFor="available-no" className="ml-2">
-                No
-              </label>
-            </div>
+              Not Available
+            </label>
           </div>
-          <br />
           <button
             type="submit"
-            className="bg-orange-500 text-white py-2 px-4 rounded w-max my-4 hover:bg-blue-500"
+            className="bg-[#183354] text-white py-2 px-6 rounded hover:bg-blue-600"
             disabled={loading}
           >
             {loading ? "Updating..." : "Update"}

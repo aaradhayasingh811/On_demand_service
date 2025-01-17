@@ -110,32 +110,34 @@ const Login = () => {
             />
 
             {/* User Role Selection */}
-            <div className="flex justify-center lg:justify-start space-x-8 mt-4">
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  id="client"
-                  name="people"
-                  value="client"
-                  checked={formData.people === "client"}
-                  onChange={handleonChange}
-                  className="mr-2"
-                />
-                <label htmlFor="client" className="text-lg">Client</label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  id="provider"
-                  name="people"
-                  value="provider"
-                  checked={formData.people === "provider"}
-                  onChange={handleonChange}
-                  className="mr-2"
-                />
-                <label htmlFor="provider" className="text-lg">Provider</label>
-              </div>
+            <div className="flex text-base font-medium sm:justify-start justify-center">
+            <div className="flex items-center me-14 w-max">
+              <input
+                type="radio"
+                id="client"
+                name="people"
+                value="client"
+                checked={formData.people === "client"}
+                onChange={handleonChange}
+              />
+              <label htmlFor="client" className="ml-2">
+                Client
+              </label>
             </div>
+            <div className="flex items-center w-max">
+              <input
+                type="radio"
+                id="provider"
+                name="people"
+                value="provider"
+                checked={formData.people === "provider"}
+                onChange={handleonChange}
+              />
+              <label htmlFor="provider" className="ml-2">
+                Provider
+              </label>
+            </div>
+          </div>
 
             {/* Login Button */}
             <button
