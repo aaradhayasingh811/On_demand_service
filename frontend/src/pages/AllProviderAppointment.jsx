@@ -114,34 +114,54 @@ const AllProviderAppointment = () => {
       <div className="flex flex-col justify-start gap-y-6 mt-10">
         <button
           onClick={() => {
+            setting("a");
             filterBookings("all");
           }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
+          className={`p-2 rounded-sm flex justify-start items-center ${
+            whichToShow === "a"
+              ? "bg-orange-500 text-white"
+              : "text-slate-300 hover:text-white"
+          }`}
         >
           <MdOutlineClearAll className="me-2 w-max text-2xl text-white" /> All
           Bookings
         </button>
         <button
           onClick={() => {
+            setting("b");
             filterBookings("Pending");
           }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
+          className={`p-2 rounded-sm flex justify-start items-center ${
+            whichToShow === "b"
+              ? "bg-orange-500 text-white"
+              : "text-slate-300 hover:text-white"
+          }`}
         >
           <MdPending className="me-2 w-max text-2xl text-white " /> Pending
         </button>
         <button
           onClick={() => {
+            setting("c");
             filterBookings("Failed");
           }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
+          className={`p-2 rounded-sm flex justify-start items-center ${
+            whichToShow === "c"
+              ? "bg-orange-500 text-white"
+              : "text-slate-300 hover:text-white"
+          }`}
         >
           <MdSmsFailed className="me-2 w-max text-white text-2xl" /> Failed
         </button>
         <button
           onClick={() => {
+            setting("d");
             filterBookings("Success");
           }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
+          className={`p-2 rounded-sm flex justify-start items-center ${
+            whichToShow === "d"
+              ? "bg-orange-500 text-white"
+              : "text-slate-300 hover:text-white"
+          }`}
         >
           <TiTick className="me-2 w-max text-white text-2xl" /> Completed
         </button>
@@ -156,7 +176,7 @@ const AllProviderAppointment = () => {
         <p className="text-xl font-medium mt-4 text-center">
           {profileData?.name}
         </p>
-        <p className="text-gray-500 text-base text-center">
+        <p className="text-gray-500 mb-14 text-base text-center">
           {profileData?.username}
         </p>
       </div>
@@ -217,13 +237,126 @@ const AllProviderAppointment = () => {
   //   </div>
   // );
 
-  const MobileClientBookingDashboard = ({ setting }) => {
+  // const MobileClientBookingDashboard = ({ setting }) => {
+  //   return (
+  //     <div className="w-full sm:hidden fixed top-[9vh]">
+  //       <button
+  //         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  //         className="w-max p-2 flex justify-start"
+  //         aria-label="Toggle menu"
+  //       >
+  //         <IoMdMenu size={30} />
+  //       </button>
+
+  //       {mobileMenuOpen && (
+  //         <div className="bg-gray-800 text-slate-200 p-4 fixed min-h-[92vh] w-[50vw] flex flex-col justify-between">
+  //           <button
+  //             onClick={() => setMobileMenuOpen(false)}
+  //             className="self-end p-2"
+  //             aria-label="Close menu"
+  //           >
+  //             <MdClose size={30} />
+  //           </button>
+
+  //           <div className="flex flex-col justify-start gap-y-8">
+  //             <div className="p-2 hover:bg-[#1f1f1f9a]">
+  //               <button
+  //                 onClick={() => {
+  //                   setting("a");
+  //                   filterBookings("All");
+  //                 }}
+  //                 className={`p-2 rounded-sm flex justify-start items-center ${
+  //                   whichToShow === "a"
+  //                     ? "bg-orange-500 text-white"
+  //                     : "text-slate-300 hover:text-white"
+  //                 }`}
+  //                 aria-label="All bookings"
+  //               >
+  //                 <MdOutlineClearAll className="me-2" />
+  //                 All Bookings
+  //               </button>
+  //             </div>
+  //             <div className="p-2 hover:bg-[#1f1f1f9a]">
+  //               <button
+  //                 onClick={() => {
+  //                   setting("b");
+  //                   filterBookings("Pending");
+  //                 }}
+  //                 className={`p-2 rounded-sm flex justify-start items-center ${
+  //                   whichToShow === "b"
+  //                     ? "bg-orange-500 text-white"
+  //                     : "text-slate-300 hover:text-white"
+  //                 }`}
+  //                 aria-label="Pending bookings"
+  //               >
+  //                 <MdPending className="me-2" />
+  //                 Pending
+  //               </button>
+  //             </div>
+  //             <div className="p-2 hover:bg-[#1f1f1f9a]">
+  //               <button
+  //                 onClick={() => {
+  //                   setting("c");
+  //                   filterBookings("Failed");
+  //                 }}
+  //                 className={`p-2 rounded-sm flex justify-start items-center ${
+  //                   whichToShow === "c"
+  //                     ? "bg-orange-500 text-white"
+  //                     : "text-slate-300 hover:text-white"
+  //                 }`}
+  //                 aria-label="Failed bookings"
+  //               >
+  //                 <MdSmsFailed className="me-2" />
+  //                 Failed
+  //               </button>
+  //             </div>
+  //             <div className="p-2 hover:bg-[#1f1f1f9a]">
+  //               <button
+  //                 onClick={() => {
+  //                   setting("d");
+  //                   filterBookings("Success");
+  //                 }}
+  //                 className={`p-2 rounded-sm flex justify-start items-center ${
+  //                   whichToShow === "d"
+  //                     ? "bg-orange-500 text-white"
+  //                     : "text-slate-300 hover:text-white"
+  //                 }`}
+  //                 aria-label="Completed bookings"
+  //               >
+  //                 <TiTick className="me-2" />
+  //                 Completed
+  //               </button>
+  //             </div>
+  //           </div>
+
+  //           <div className="flex p-2 text-center flex-col justify-center items-center">
+  //             <div className="flex justify-center">
+  //               <img
+  //                 src={profileData?.avatar || "default-avatar.png"}
+  //                 alt="Profile"
+  //                 className="w-20 h-20 rounded-[50%]"
+  //               />
+  //             </div>
+  //             <div className="flex flex-col justify-center items-center">
+  //               <p className="text-lg font-medium">
+  //                 {profileData?.name || "Guest"}
+  //               </p>
+  //               <p className="text-base mb-20">
+  //                 {profileData?.username || "guest123"}
+  //               </p>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       )}
+  //     </div>
+  //   );
+  // };
+  const MobileDashboardMenu = ({ setting }) => {
     return (
       <div className="w-full sm:hidden fixed top-[9vh]">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="w-max p-2 flex justify-start"
-          aria-label="Toggle menu"
         >
           <IoMdMenu size={30} />
         </button>
@@ -233,70 +366,50 @@ const AllProviderAppointment = () => {
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="self-end p-2"
-              aria-label="Close menu"
             >
               <MdClose size={30} />
             </button>
 
             <div className="flex flex-col justify-start gap-y-8">
-              <div className="p-2 hover:bg-[#1f1f1f9a]">
+              {["All", "Pending", "Failed", "Success"].map((status, idx) => (
                 <button
-                  onClick={() => filterBookings("All")}
-                  className="flex items-center justify-start w-max text-nowrap"
-                  aria-label="All bookings"
+                  key={status}
+                  onClick={() => {
+                    setting(status.toLowerCase()[0]);
+                    filterBookings(status);
+                  }}
+                  className={`p-2 rounded-sm flex justify-start text-nowrap items-center ${
+                    whichToShow === status.toLowerCase()[0]
+                      ? "bg-orange-500 text-white"
+                      : "text-slate-300 hover:text-white"
+                  }`}
                 >
-                  <MdOutlineClearAll className="me-2" />
-                  All Bookings
+                  {status === "All" ? (
+                    <MdOutlineClearAll className="me-2 w-max" />
+                  ) : status === "Pending" ? (
+                    <MdPending className="me-2 w-max" />
+                  ) : status === "Failed" ? (
+                    <MdSmsFailed className="me-2 w-max" />
+                  ) : (
+                    <TiTick className="me-2 w-max" />
+                  )}
+                  {status} 
                 </button>
-              </div>
-              <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button
-                  onClick={() => filterBookings("Pending")}
-                  className="flex items-center justify-start w-max text-nowrap"
-                  aria-label="Pending bookings"
-                >
-                  <MdPending className="me-2" />
-                  Pending
-                </button>
-              </div>
-              <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button
-                  onClick={() => filterBookings("Failed")}
-                  className="flex items-center justify-start w-max text-nowrap"
-                  aria-label="Failed bookings"
-                >
-                  <MdSmsFailed className="me-2" />
-                  Failed
-                </button>
-              </div>
-              <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button
-                  onClick={() => filterBookings("Success")}
-                  className="flex items-center justify-start w-max text-nowrap"
-                  aria-label="Completed bookings"
-                >
-                  <TiTick className="me-2" />
-                  Completed
-                </button>
-              </div>
+              ))}
             </div>
 
-            <div className="flex p-2 text-center flex-col justify-center items-center">
-              <div className="flex justify-center">
-                <img
-                  src={profileData?.avatar || "default-avatar.png"}
-                  alt="Profile"
-                  className="w-20 h-20 rounded-[50%]"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center">
-                <p className="text-lg font-medium">
-                  {profileData?.name || "Guest"}
-                </p>
-                <p className="text-base mb-20">
-                  {profileData?.username || "guest123"}
-                </p>
-              </div>
+            <div className="flex flex-col items-center mt-10 text-slate-200">
+              <img
+                src={profileData?.avatar}
+                alt="Profile"
+                className="w-16 h-16 rounded-full border-4 border-white shadow-lg"
+              />
+              <p className="text-xl font-medium mt-4 text-center">
+                {profileData?.name}
+              </p>
+              <p className="text-gray-500 text-base text-center">
+                {profileData?.username}
+              </p>
             </div>
           </div>
         )}
@@ -315,7 +428,7 @@ const AllProviderAppointment = () => {
         people={people}
       />
       <div className="bg-[#fafafa]" style={{ minHeight: "90vh" }}>
-        <MobileClientBookingDashboard />
+        <MobileDashboardMenu setting={setWhichToShow} />
 
         <div className="flex">
           <div className="xl:w-[15%] lg:w-[20%] sm:w-[30%] fixed hidden sm:block">
@@ -352,8 +465,8 @@ const AllProviderAppointment = () => {
                   </p>
                 ) : (
                   filteredBookings
-                    .slice() 
-                    .reverse() 
+                    .slice()
+                    .reverse()
                     .map((item, id) => <BookingPro item={item} key={id} />)
                 )}
               </div>

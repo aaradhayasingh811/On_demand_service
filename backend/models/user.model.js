@@ -31,6 +31,13 @@ const userSchema = new mongoose.Schema(
     refreshToken :{
       type :String,
   },
+  peopleHired:{
+    type: Number,
+  },
+  transactionMade:{
+    type: Number,
+
+  }
   },
   { timestamps: true }
 );

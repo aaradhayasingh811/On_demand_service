@@ -98,8 +98,8 @@ const BookingPro = ({ item }) => {
 
   const appointedHourColor =
     hours >= 9 && hours <= 17
-      ? "bg-blue-500" // Blue for daytime appointments (9 AM - 5 PM)
-      : "bg-gray-500"; // Gray for other hours
+      ? "bg-blue-500" 
+      : "bg-gray-500";
 
   const formattedDate = `${day} ${monthName} ${year}`;
   const formattedTime = `${hourIn12HourFormat}:${minutes} ${amPm}`;
@@ -114,7 +114,7 @@ const BookingPro = ({ item }) => {
 
   return (
     <div className="w-full mx-auto bg-white shadow-lg rounded-lg p-6 mb-6 hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col md:grid md:grid-cols-2 md:gap-4">
-      <div className="flex justify-center items-center md:flex-col">
+      <div className="flex justify-center items-center flex-col">
         <img
           src={provider.avatar}
           alt="Provider Avatar"

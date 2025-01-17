@@ -111,6 +111,16 @@ const profileShowController = async (req, res) => {
       httpOnly: true,
       secure: true,
     };
+    const bookings = await Booking.find({ who: email });
+    if(bookings.length === 0){
+      user.peopleHired = 0;
+    }
+    else{
+      user.peopleHired = bookings.length;
+    }
+    const success = bookings.filter((booking) => booking.status === "Success");
+    user.transactionMade = success.length;
+    await user.save({ validateBeforeSave: false });
     return res.status(200).json(user);
   } catch (error) {
     console.log(error, "in profile show controller");
