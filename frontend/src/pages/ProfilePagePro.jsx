@@ -17,7 +17,7 @@ const ProfilePagePro = () => {
         setLoading(true);
         setError(null);
         const response = await axios.get(
-          `${import.meta.env.HOST_URL}/api/v1/provider-profile/${email}`
+          `https://on-demand-service-m5nh.onrender.com/api/v1/provider-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {

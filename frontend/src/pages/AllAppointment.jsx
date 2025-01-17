@@ -16,7 +16,7 @@
 //       setLoading(true); // Set loading to true before fetching data
 //       try {
 //         const allBooking = await axios.get(
-//           `${import.meta.env.HOST_URL}/api/v1/provider-all-appointment/${email}`
+//           `https://on-demand-service-m5nh.onrender.com/api/v1/provider-all-appointment/${email}`
 //         );
 //         setBooking(allBooking.data);
 //         setFilteredBooking(allBooking.data); // Set all bookings by default

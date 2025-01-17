@@ -15,12 +15,12 @@ const Navclient = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.HOST_URL}`;
+  
 
   const logoutButton = async () => {
     setIsLoading(true);
     try {
-      await axios.get(`${API_URL}/api/v1/logout/${email}`);
+      await axios.get(`https://on-demand-service-m5nh.onrender.com/api/v1/logout/${email}`);
       toast.success("🦄 Logged Out Successfully!", {
         position: "top-right",
         autoClose: 3000,

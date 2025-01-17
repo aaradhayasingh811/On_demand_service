@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
     setError(""); // Reset any previous error
     try {
-      const response = await axios.post(`${import.meta.env.HOST_URL}/api/v1/login`, {
+      const response = await axios.post(`https://on-demand-service-m5nh.onrender.com/api/v1/login`, {
         email: formData.email,
         password: formData.password,
       });

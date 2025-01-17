@@ -20,7 +20,7 @@ const TopReview = () => {
     const fetchReview = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.HOST_URL}/api/v1/provider-review/${email}`
+          `https://on-demand-service-m5nh.onrender.com/api/v1/provider-review/${email}`
         );
         setdataSet(response.data.alluser);
         setLoading(false); // Data fetched, stop loading

@@ -27,7 +27,7 @@ const Profilepage = () => {
     const profileLoader = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.HOST_URL}/api/v1/show-profile/${email}`
+          `https://on-demand-service-m5nh.onrender.com/api/v1/show-profile/${email}`
         );
         setProfileData(response.data);
       } catch (err) {

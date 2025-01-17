@@ -25,7 +25,7 @@ const RateNReview = () => {
     const fetchBookings = async () => {
       try {
         setLoading(true); // Start loading
-        const res = await axios.get(`${import.meta.env.HOST_URL}/api/v1/all-booking/${email}`);
+        const res = await axios.get(`https://on-demand-service-m5nh.onrender.com/api/v1/all-booking/${email}`);
         const successfulBookings = res.data.filter(
           (booking) => booking.status === "Success"
         );
@@ -145,7 +145,7 @@ const RateNReview = () => {
 
       try {
         console.log(Data)
-        await axios.patch(`${import.meta.env.HOST_URL}/api/v1/rating`, Data);
+        await axios.patch(`https://on-demand-service-m5nh.onrender.com/api/v1/rating`, Data);
         toast.success(" Rating and Review submitted!", {
           position: "top-right",
           autoClose: 3000,

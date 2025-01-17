@@ -68,7 +68,7 @@ const ProfilePro = ({ profileDetail }) => {
     console.log(formData)
     try {
       const response = await axios.patch(
-        `${import.meta.env.HOST_URL}/api/v1/provider-update-profile/${profileDetail.provider.email}`,
+        `https://on-demand-service-m5nh.onrender.com/api/v1/provider-update-profile/${profileDetail.provider.email}`,
         formData,
         {
           headers: {

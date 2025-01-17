@@ -20,7 +20,7 @@ const ProviderDashboard = () => {
     setLoading(true); // Set loading to true when the request starts
     try {
       const response = await axios.patch(
-        `${import.meta.env.HOST_URL}/api/v1/is-available/${email}`
+        `https://on-demand-service-m5nh.onrender.com/api/v1/is-available/${email}`
       );
       console.log(response.data)
       if(response.data.provider.isAvaliable){
