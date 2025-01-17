@@ -11,7 +11,7 @@ import AllBooking from './pages/AllBooking'
 import ProfilePagePro from './pages/ProfilePagePro'
 // import AllAppointment from './pages/AllAppointment'
 import AllProviderAppointment from './pages/AllProviderAppointment'
-import ProviderProfilePage from './pages/ProviderProfilePAge'
+import ProviderProfilePage from './pages/ProviderProfilePage'
 const App = () => {
   return (
     <>
