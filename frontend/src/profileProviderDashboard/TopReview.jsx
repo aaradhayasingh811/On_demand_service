@@ -110,9 +110,10 @@ const TopReview = () => {
     const time = dateObject.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
   
     return (
-      <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 max-w-3xl mx-auto mb-6 transition-transform duration-300 hover:scale-105">
+      <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 max-w-lg mx-auto mb-6 transition-transform duration-300 hover:scale-105">
         {/* Header: User Info */}
-        <div className="flex items-center space-x-4 mb-6">
+       <div className="flex min-[437px]:flex-row flex-col">
+       <div className="flex items-center space-x-4">
           <img
             src={item.user.avatar}
             alt="User Avatar"
@@ -123,6 +124,23 @@ const TopReview = () => {
             <p className="text-sm text-gray-500">@{item.user.username}</p>
           </div>
         </div>
+        <div className="flex min-[437px]:flex-col flex-row items-center mb-6">
+        <div className="flex items-center">
+            <DateRangeOutlinedIcon className="text-blue-600 text-xl mr-3" />
+            <div>
+              <p className="text-sm text-gray-500">Date</p>
+              <p className="text-gray-700 text-base font-medium">{formattedDate}</p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <TimerOutlinedIcon className="text-blue-600 text-xl mr-3" />
+            <div>
+              <p className="text-sm text-gray-500">Time</p>
+              <p className="text-gray-700 text-base font-medium">{time}</p>
+            </div>
+          </div>
+        </div>
+       </div>
   
         {/* Divider */}
         <hr className="border-t border-gray-200 my-4" />
@@ -130,28 +148,23 @@ const TopReview = () => {
         {/* Content */}
         <div className="space-y-4">
           {/* Work Information */}
-          <div className="flex items-start">
+          <div className="flex justify-between">
+          <div className="flex items-center">
             <WorkOutlineOutlinedIcon className="text-blue-600 text-xl mr-3" />
             <div>
               <p className="text-sm text-gray-500">Work</p>
               <p className="text-gray-700 text-base font-medium">{item.provider.work}</p>
             </div>
           </div>
-  
-          {/* Date and Time */}
-          <div className="flex items-start">
-            <DateRangeOutlinedIcon className="text-blue-600 text-xl mr-3" />
+          <div className="flex items-center">
+            <StarBorderOutlinedIcon className="text-yellow-500 text-xl mr-3" />
             <div>
-              <p className="text-sm text-gray-500">Date</p>
-              <p className="text-gray-700 text-base font-medium">{formattedDate}</p>
+              <p className="text-sm text-gray-500">Rating</p>
+              <p className="text-gray-700 text-base font-medium">{item.eachPro.Rating} / 5</p>
             </div>
           </div>
-          <div className="flex items-start">
-            <TimerOutlinedIcon className="text-blue-600 text-xl mr-3" />
-            <div>
-              <p className="text-sm text-gray-500">Time</p>
-              <p className="text-gray-700 text-base font-medium">{time}</p>
-            </div>
+  
+          
           </div>
   
           {/* Review */}
@@ -164,13 +177,7 @@ const TopReview = () => {
           </div>
   
           {/* Rating */}
-          <div className="flex items-start">
-            <StarBorderOutlinedIcon className="text-yellow-500 text-xl mr-3" />
-            <div>
-              <p className="text-sm text-gray-500">Rating</p>
-              <p className="text-gray-700 text-base font-medium">{item.eachPro.Rating} / 5</p>
-            </div>
-          </div>
+         
         </div>
       </div>
     );
