@@ -71,44 +71,60 @@ const AllBooking = () => {
   const FullClientBookingDashboard = ({ setting }) => (
     <div className="sm:flex hidden min-h-screen bg-gray-800 flex-col justify-around gap-y-8 border-r border-gray-300 p-5">
       <div className="flex flex-col justify-start gap-y-6 mt-10">
-        <button
-          onClick={() => {
-            setting("a");
-            filterBookings("all");
-          }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
-        >
-          <MdOutlineClearAll className="me-2 w-max text-2xl text-white" /> All
-          Bookings
-        </button>
-        <button
-          onClick={() => {
-            setting("b");
-            filterBookings("Pending");
-          }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
-        >
-          <MdPending className="me-2 w-max text-2xl text-white " /> Pending
-        </button>
-        <button
-          onClick={() => {
-            setting("c");
-            filterBookings("Failed");
-          }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
-        >
-          <MdSmsFailed className="me-2 w-max text-white text-2xl" /> Failed
-        </button>
-        <button
-          onClick={() => {
-            setting("d");
-            filterBookings("Success");
-          }}
-          className="p-2 text-slate-300 hover:text-white rounded-sm  flex justify-start items-center"
-        >
-          <TiTick className="me-2 w-max text-white text-2xl" /> Completed
-        </button>
-      </div>
+  <button
+    onClick={() => {
+      setting("a");
+      filterBookings("all");
+    }}
+    className={`p-2 rounded-sm flex justify-start items-center ${
+      whichToShow === "a"
+        ? "bg-orange-500 text-white"
+        : "text-slate-300 hover:text-white"
+    }`}
+  >
+    <MdOutlineClearAll className="me-2 w-max text-2xl" /> All Bookings
+  </button>
+  <button
+    onClick={() => {
+      setting("b");
+      filterBookings("Pending");
+    }}
+    className={`p-2 rounded-sm flex justify-start items-center ${
+      whichToShow === "b"
+        ? "bg-orange-500 text-white"
+        : "text-slate-300 hover:text-white"
+    }`}
+  >
+    <MdPending className="me-2 w-max text-2xl" /> Pending
+  </button>
+  <button
+    onClick={() => {
+      setting("c");
+      filterBookings("Failed");
+    }}
+    className={`p-2 rounded-sm flex justify-start items-center ${
+      whichToShow === "c"
+        ? "bg-orange-500 text-white"
+        : "text-slate-300 hover:text-white"
+    }`}
+  >
+    <MdSmsFailed className="me-2 w-max text-2xl" /> Failed
+  </button>
+  <button
+    onClick={() => {
+      setting("d");
+      filterBookings("Success");
+    }}
+    className={`p-2 rounded-sm flex justify-start items-center ${
+      whichToShow === "d"
+        ? "bg-orange-500 text-white"
+        : "text-slate-300 hover:text-white"
+    }`}
+  >
+    <TiTick className="me-2 w-max text-2xl" /> Completed
+  </button>
+</div>
+
 
       <div className="flex flex-col items-center mt-10 text-slate-200">
         <img

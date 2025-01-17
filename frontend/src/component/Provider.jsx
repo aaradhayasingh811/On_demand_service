@@ -26,7 +26,10 @@ const Provider = () => {
           <RadioButtonCheckedIcon className="me-3" />
           AI tools to enhance service quality.
         </div>
-        <a href="/login" className="bg-[#fe4b01] p-2 w-max my-10 rounded text-white font-medium">
+        <a
+          href="/login"
+          className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
+        >
           Become a Service Provider
         </a>
       </div>

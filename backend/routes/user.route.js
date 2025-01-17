@@ -25,6 +25,7 @@ import {
   makeAvailableController,
   getReviewController,
   getChartDataController,
+  checkAvailController
 } from "../controllers/provider.controller.js";
 import { sendEmail } from "../email.js";
 import { sendmailController } from "../controllers/email.controller.js";
@@ -56,6 +57,7 @@ router
 router.route("/is-available/:email").patch(makeAvailableController);
 router.route("/change-status").patch(changeStatusController);
 router.route("/analysis-provider/:email").get(getChartDataController);
+router.route("/check-avail/:email").get(checkAvailController);
 
 // to get review
 router.route("/provider-review/:email").get(getReviewController);

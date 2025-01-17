@@ -29,8 +29,11 @@ const Client = () => {
           <RadioButtonCheckedIcon className="me-3" />
           Get instant payment protection and secure payment options
         </div>
-        <a href="/login" className="bg-[#fe4b01] p-2 w-max my-10 rounded text-white font-medium">
-          Become a client
+        <a
+          href="/login"
+          className="bg-[#183354] my-4 w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
+        >
+          Become a Client
         </a>
       </div>
     </div>

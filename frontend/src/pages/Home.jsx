@@ -5,6 +5,7 @@ import Client from '../component/Client'
 import Section from '../component/Section'
 import Provider from '../component/Provider'
 import Footer from '../component/Footer'
+import Contact from '../component/Contact'
 const Home = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Home = () => {
     <Client/>
     <Section/>
     <Provider/>
+    <Contact/>
     <Footer/>
     </>
   )

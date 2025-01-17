@@ -3,60 +3,53 @@ import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MilitaryTechOutlinedIcon from "@mui/icons-material/MilitaryTechOutlined";
+
 const Section = () => {
+  const stats = [
+    {
+      icon: <VerifiedOutlinedIcon className="text-yellow-500 text-4xl" />,
+      value: "100+",
+      description: "Verified Workers",
+    },
+    {
+      icon: <PeopleAltOutlinedIcon className="text-yellow-500 text-4xl" />,
+      value: "70+",
+      description: "Demand Sponsored Businesses",
+    },
+    {
+      icon: <MilitaryTechOutlinedIcon className="text-yellow-500 text-4xl" />,
+      value: "120+",
+      description: "Average Hires Per Month",
+    },
+    {
+      icon: <LightbulbOutlinedIcon className="text-yellow-500 text-4xl" />,
+      value: "50+",
+      description: "Innovative Solutions Delivered",
+    },
+  ];
+
   return (
-    <div style={{ minHeight: "90vh" }} className="bg-[#fff7e1] font-mono">
-      <h1 className="text-center text-4xl font-bold pt-32">
+    <div className="min-h-[90vh] bg-[#fff7e1] font-mono py-20 px-4">
+      <h1 className="text-center text-4xl font-bold text-gray-800">
         Demand Service App
       </h1>
-      <p className="text-center text-lg font-normal my-4">
-        This provide client with the certified workers in real time
+      <p className="text-center text-lg font-normal text-gray-600 mt-4">
+        Providing clients with certified workers in real-time.
       </p>
-      <div className="flex p-20 sm:flex-row flex-col ">
-        <div className="flex flex-col leading-8 justify-center items-center mx-2 text-center shadow-xl rounded">
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            <VerifiedOutlinedIcon />
+
+      <div className="flex flex-wrap justify-center gap-8 mt-12">
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center text-center bg-white shadow-lg rounded-lg p-6 w-[280px] hover:shadow-xl transition-shadow duration-300"
+          >
+            <div className="mb-4">{stat.icon}</div>
+            <div className="text-3xl font-bold text-gray-800">{stat.value}</div>
+            <div className="text-lg font-medium text-gray-600 mt-2">
+              {stat.description}
+            </div>
           </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            100+
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            Verified Workers
-          </div>
-        </div>
-        <div className="flex flex-col leading-8 text-2xl justify-center items-center mx-2 text-center shadow-xl rounded">
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            <PeopleAltOutlinedIcon />
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            70+
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            Demand sponsered Business
-          </div>
-        </div>
-        <div className="flex flex-col leading-8 text-2xl justify-center items-center mx-2 text-center shadow-xl rounded">
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            <MilitaryTechOutlinedIcon />
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            120+
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            Average hires per month
-          </div>
-        </div>
-        <div className="flex flex-col leading-8 text-2xl justify-center items-center mx-2 text-center shadow-xl rounded">
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            <VerifiedOutlinedIcon />
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            100+
-          </div>
-          <div className=" sm:text-2xl text-lg flex justify-center my-3 font-medium">
-            Verified Workers
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

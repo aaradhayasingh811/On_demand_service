@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import hello from "../assets/hello.png";
 import UpdateProvider from "../pages/UpdateProvider";
 import NavPro from "./NavPro";
@@ -10,7 +10,29 @@ const ProviderDashboard = () => {
   const [Available, setAvailable] = useState(false);
   const { email, people } = useParams();
   const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);  // Track loading state for availability update
+  const [loading, setLoading] = useState(false); 
+
+  useEffect(() => {
+    const fetchAvailable = async () => {
+      setLoading(true); // Set loading to true before making the request
+      try {
+        const response = await axios.get(
+          `https://on-demand-service-m5nh.onrender.com/api/v1/check-avail/${email}`
+        );
+        if (response.data.provider.isAvaliable) {
+          setAvailable(true);
+        } else {
+          setAvailable(false);
+        }
+      } catch (error) {
+        console.error("Error fetching availability status:", error);
+      } finally {
+        setLoading(false); // Reset loading state after the request completes
+      }
+    };
+
+    fetchAvailable();
+  }, [email]);
 
   const updateHandle = () => {
     setShow(!show);

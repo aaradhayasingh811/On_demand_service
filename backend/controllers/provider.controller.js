@@ -186,6 +186,21 @@ const updateProviderDetailsController = async (req, res) => {
   }
 };
 
+const checkAvailController = async(req,res)=>{
+  try {
+    const { email } = req.params;
+    const provider = await Provider.findOne({ email });
+    if (provider) {
+      return res.status(400).json({ message: "Email already exists." });
+    }
+    return res.status(200).json({ message: "Email is available." ,provider});
+    
+  } catch (error) {
+    console.error("Error in checkAvailController:", error.message);
+    
+  }
+}
+
 
 const makeAvailableController = async(req,res)=>{
   try {
@@ -296,5 +311,6 @@ export {
   updateProviderDetailsController,
   makeAvailableController,
   getReviewController,
-  getChartDataController
+  getChartDataController,
+  checkAvailController
 };

@@ -23,6 +23,13 @@ const Profilepage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
   const mobileMenuRef = useRef(null); 
 
+
+  const buttonStyle = (option) => {
+    return whichToShow === option
+      ? "bg-orange-500 text-white"
+      : "text-slate-300 hover:text-white";
+  };
+
   useEffect(() => {
     const profileLoader = async () => {
       try {
@@ -70,25 +77,29 @@ const Profilepage = () => {
       <div className="sm:flex hidden min-h-screen bg-gray-700 flex-col justify-around gap-y-8">
         <div className="flex flex-col justify-start gap-y-8 p-3 mt-16  ">
           <div className=" p-2 text-slate-300 hover:text-white rounded-sm ">
-            <button onClick={() => setting("a")} className="flex rounded items-center w-max justify-center ">
-              <IoPeopleSharp className="me-2 text-2xl" style={{color:"#fafafa"}}/>
+            <button onClick={() => setting("a")}               className={`flex rounded items-center w-full justify-start py-2  text-nowrap px-4 ${buttonStyle("a")}`}
+>
+              <IoPeopleSharp className="me-2 w-max text-2xl" style={{color:"#fafafa"}}/>
               Profile</button>
           </div>
           <div className="p-2 text-slate-300 hover:text-white rounded-sm  ">
-            <button onClick={() => setting("b")} className="flex rounded items-center w-max justify-center text-nowrap"> <FaEdit className="me-2 text-2xl" style={{color:"#fafafa"}}/>Edit Profile</button>
+            <button onClick={() => setting("b")}               className={`flex rounded items-center w-full justify-start py-2  text-nowrap px-4 ${buttonStyle("b")}`}
+            > <FaEdit className="me-2 w-max text-2xl" style={{color:"#fafafa"}}/>Edit Profile</button>
           </div>
           {/* <div className="hover:bg-[#1f1f1f9a] p-2 hover:text-slate-300 rounded-sm ">
             <button onClick={() => setting("c")} className="flex rounded items-center w-max justify-center "><FaHistory className="me-2" />
             History</button>
           </div> */}
           <div className="p-2 text-slate-300 hover:text-white rounded-sm ">
-            <button onClick={() => setting("d")} className="flex rounded items-center w-max justify-center text-nowrap">
-              <MdStarRate className="me-2 text-2xl" style={{color:"#fafafa"}}/>
+            <button onClick={() => setting("d")}              className={`flex rounded items-center w-full justify-start py-2  text-nowrap px-4 ${buttonStyle("d")}`}
+            >
+              <MdStarRate className="me-2 w-max text-2xl" style={{color:"#fafafa"}}/>
               Rate & Review</button>
           </div>
           <div className="p-2 text-slate-300 hover:text-white rounded-sm "> 
-            <button onClick={() => setting("e")} className="p-2 flex rounded items-center w-max justify-center text-nowrap">
-              <FaChartColumn className="me-2 text-2xl" style={{color:"#fafafa"}}/>
+            <button onClick={() => setting("e")} className={`flex rounded items-center w-full justify-start  text-nowrap py-2 px-4 ${buttonStyle("e")}`}
+            >
+              <FaChartColumn className="w-max me-2 text-2xl" style={{color:"#fafafa"}}/>
               Analysis</button>
           </div>
         </div>
@@ -120,27 +131,27 @@ const Profilepage = () => {
           >
             <div className="flex flex-col justify-start gap-y-8 ">
               <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button onClick={() => setWhichToShow("a")} className="flex items-center justify-start w-max text-nowrap">
-                  <IoPeopleSharp className="me-2 text-2xl"/>
+                <button onClick={() => setWhichToShow("a")} className={`flex rounded items-center w-full justify-start  text-nowrap py-2 px-4 ${buttonStyle("a")}`}>
+                  <IoPeopleSharp className="me-2 w-max text-2xl"/>
                   Profile
                 </button>
               </div>
               <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button onClick={() => setWhichToShow("b")} className="flex items-center justify-start w-max text-nowrap">
-                  <FaEdit className="me-2 text-2xl"/>
+                <button onClick={() => setWhichToShow("b")} className={`flex rounded items-center w-full justify-start  text-nowrap py-2 px-4 ${buttonStyle("b")}`}>
+                  <FaEdit className="me-2 w-max text-2xl"/>
                   Edit Profile
                 </button>
               </div>
               
               <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button onClick={() => setWhichToShow("d")} className="flex items-center justify-start w-max text-nowrap">
-                  <MdStarRate className="me-2 text-2xl"/>
+                <button onClick={() => setWhichToShow("d")} className={`flex rounded items-center w-full justify-start  text-nowrap py-2 px-4 ${buttonStyle("d")}`}>
+                  <MdStarRate className="me-2 w-max text-2xl"/>
                   Rate & Review
                 </button>
               </div>
               <div className="p-2 hover:bg-[#1f1f1f9a]">
-                <button onClick={() => setWhichToShow("e")} className="flex items-center justify-start w-max text-nowrap">
-                  <FaChartColumn className="me-2 text-2xl"/>
+                <button onClick={() => setWhichToShow("e")} className={`flex rounded items-center w-full justify-start  text-nowrap py-2 px-4 ${buttonStyle("e")}`}>
+                  <FaChartColumn className="me-2 w-max text-2xl"/>
                   Analysis
                 </button>
               </div>

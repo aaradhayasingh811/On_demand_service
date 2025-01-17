@@ -2,48 +2,56 @@ import React from "react";
 import a from "../assets/1.png";
 import b from "../assets/2.png";
 import About from "./About.jsx";
+
 const Landing = () => {
   return (
     <>
-      <div className="bg-[#fff7e1] h-screen flex justify-around items-center sm:flex-row flex-col">
-        <div className="sm:mx-8 flex sm:justify-start justify-center">
+      <div className="bg-gradient-to-r from-[#f9f9f9] to-[#fff7e1] min-h-screen flex flex-col lg:flex-row justify-center items-center p-6 sm:p-6 gap-10">
+        {/* Left Image Section */}
+        <div className="flex justify-center  mb-6 sm:mb-0">
           <img
             src={a}
-            alt=""
-            className="lg:w-80 lg:h-80 md:w-64 md:h-64 w-40 h-40"
+            alt="Professional Service"
+            className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-lg shadow-2xl object-cover"
           />
         </div>
-        <div className="sm:ms-2 sm:me-4 self-start sm:mt-32 mt-12">
-          <h2 className="my-2 text-center md:text-3xl sm:text-2xl text-2xl lg:text-5xl font-mono font-semibold">
-            Find Professional Services in your Area
+
+        {/* Text and Call to Action Section */}
+        <div className="text-center sm:text-left sm:ml-8 ">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#2f4f4f] my-4 text-center">
+            Discover Professional Services Near You
           </h2>
-          <p className="my-4 text-center md:text-base lg:text-xl font-light">
-            Pay workers securely, with confidence; Hire vetted, qualified
-            workers for your projects.{" "}
+          <p className="text-lg sm:text-xl font-light text-[#555] mb-6">
+            Securely hire vetted and qualified workers for your projects with confidence and peace of mind.
           </p>
-          <div className="my-8 flex sm:flex-row flex-col sm:justify-around items-center sm:gap-y-0 gap-y-4">
+
+          <div className="flex justify-center sm:justify-start gap-4">
             <a
               href="/login"
-              className="sm:p-2 p-1 text-white bg-[#fe4b01] w-max rounded-lg"
+              className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
             >
               Become a Client
             </a>
             <a
               href="/login"
-              className="sm:p-2 p-1 text-white bg-[#fe4b01] w-max rounded-lg"
+              className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
             >
-              Become a service provider
+              Become a Service Provider
             </a>
           </div>
         </div>
-        <div className="sm:ms-8  flex sm:justify-start justify-center">
+
+        {/* Right Image Section */}
+        <div className="flex justify-center mt-6 sm:mt-0">
           <img
             src={b}
-            alt=""
-            className="lg:w-80 lg:h-80 md:w-64 md:h-64 w-40 h-40"
+            alt="Professional Service"
+            className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-lg shadow-2xl object-cover"
           />
         </div>
       </div>
+
+      {/* About Section (Optional - Uncomment if needed) */}
       {/* <About /> */}
     </>
   );
