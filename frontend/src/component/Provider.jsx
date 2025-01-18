@@ -28,7 +28,7 @@ const Provider = () => {
         </div>
         <a
           href="/login"
-          className="bg-[#183354] w-max text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
+          className="bg-[#183354] w-max text-white py-2 sm:px-6 px-2 rounded-lg sm:text-lg font-semibold hover:bg-[#0088cc] transition-all duration-300 shadow-md"
         >
           Become a Service Provider
         </a>

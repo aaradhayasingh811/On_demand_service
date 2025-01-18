@@ -6,6 +6,7 @@ import Section from '../component/Section'
 import Provider from '../component/Provider'
 import Footer from '../component/Footer'
 import Contact from '../component/Contact'
+import Testinomial from '../component/Testinomial'
 const Home = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Home = () => {
     <Client/>
     <Section/>
     <Provider/>
+    <Testinomial/>
     <Contact/>
     <Footer/>
     </>

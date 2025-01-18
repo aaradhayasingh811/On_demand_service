@@ -30,4 +30,17 @@ const sendmailController = async(req,res) =>{
     
 }
 
-export {sendmailController}
+const emailToMeController = async(req,res)=>{
+
+    const {name , email , message} = req.body;
+    if(!name || !email || !message){
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+    const receiverMail = "aaradhayasingh1921@gmail.com";
+    const result = sendEmail(email, receiverMail, message);
+    return res.status(200).json({ message: 'Mail sended' });
+
+
+}
+
+export {sendmailController , emailToMeController}

@@ -25,10 +25,13 @@ import {
   makeAvailableController,
   getReviewController,
   getChartDataController,
-  checkAvailController
+  checkAvailController,
 } from "../controllers/provider.controller.js";
 import { sendEmail } from "../email.js";
-import { sendmailController } from "../controllers/email.controller.js";
+import {
+  sendmailController,
+  emailToMeController,
+} from "../controllers/email.controller.js";
 const router = Router();
 
 // user Routes
@@ -64,5 +67,6 @@ router.route("/provider-review/:email").get(getReviewController);
 
 // email
 router.route("/send-email").post(sendmailController);
+router.route("/send-email-me").post(emailToMeController);
 
 export { router };

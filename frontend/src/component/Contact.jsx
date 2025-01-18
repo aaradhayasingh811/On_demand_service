@@ -24,7 +24,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post('https://your-api-endpoint/contact', formData);
+      const response = await axios.post(`https://on-demand-service-m5nh.onrender.com/api/v1/send-email-me`, formData);
       console.log('Response:', response.data);
       alert('Message sent successfully!');
       setFormData({
