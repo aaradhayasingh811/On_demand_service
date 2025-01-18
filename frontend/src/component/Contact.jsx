@@ -22,6 +22,7 @@ const Contact = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    // console.log('Form Data:', formData);
 
     try {
       const response = await axios.post(`https://on-demand-service-m5nh.onrender.com/api/v1/send-email-me`, formData);
