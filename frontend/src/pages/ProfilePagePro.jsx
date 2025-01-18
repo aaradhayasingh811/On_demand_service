@@ -21,7 +21,7 @@ const ProfilePagePro = () => {
         );
         setProfileData(response.data);
       } catch (err) {
-        setError("Failed to load profile data. Please try again later.");
+        setError("Failed to load profile data. As you have not updated the details yet.");
         console.error(err);
       } finally {
         setLoading(false);
