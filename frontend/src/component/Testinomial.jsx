@@ -13,7 +13,7 @@ const Testinomial = () => {
               alt="Picture of Owner"
               className="image-testimonial"
             />
-            <div className="name">Kelly Sikkema</div>
+            <div className="name">Surbhi Sikkema</div>
            
             <div className="description">
             This company has been fantastic in providing reliable workers for our business. The cleaners, electricians, and mechanics they sent over were highly professional and always on time. Their attention to detail and the quality of their work really impressed us. We’ve seen a noticeable improvement in our workplace efficiency, thanks to the consistent, high-quality services we receive. The convenience and reliability of the personnel provided have made a significant difference in our daily operations, and I would highly recommend them. <br />
@@ -27,7 +27,7 @@ const Testinomial = () => {
               alt="Picture of Owner"
               className="image-testimonial"
             />
-            <div className="name">Ethan Hoover</div>
+            <div className="name">Rinku Sekhawat</div>
             <div className="description">
             The team at this company has been an absolute asset to our business. We were in need of skilled personnel for maintenance and cleaning, and they provided us with top-notch workers who understood our needs right away. I can confidently say that the facilities and the personnel they've provided have played a significant role in keeping our operations running smoothly. <br />
             <Rating name="read-only" value="4" className="mt-5" readOnly />
@@ -40,7 +40,7 @@ const Testinomial = () => {
               alt="Picture of Owner"
               className="image-testimonial"
             />
-            <div className="name">Sarah Lee</div>
+            <div className="name">Samriddhi Srivastva</div>
             
             <div className="description">
             We needed skilled labor for a variety of tasks, and this company came through with excellent personnel for everything from cleaning to electrical work. The team they sent was highly skilled, punctual, and extremely professional. Whether it was routine maintenance or urgent repairs, the staff ensured our operations continued without interruption. The service has been outstanding, and we are grateful for the high-quality work that has been consistently delivered. <br />
@@ -54,7 +54,7 @@ const Testinomial = () => {
               alt="Picture of Owner"
               className="image-testimonial"
             />
-            <div className="name">Daniel Lincoln</div>
+            <div className="name">Pushpa Rawat</div>
             <div className="description">
             I can't thank this company enough for providing us with such skilled workers. From cleaning staff to electricians, every worker they’ve sent has been highly professional and thorough in their work. 
             <br />
@@ -68,7 +68,7 @@ const Testinomial = () => {
               alt="Picture of Owner"
               className="image-testimonial"
             />
-            <div className="name">Mike Austin</div>
+            <div className="name">Amrita Paswan</div>
             
             <div className="description">
             This company has truly exceeded our expectations by supplying us with the best personnel for our needs. The cleaners, mechanics, and electricians have been incredibly reliable and efficient. They arrive on time, complete their tasks with care, and ensure everything runs smoothly without disruption. Their team’s professionalism and commitment to quality have made a real difference for us. We’re extremely pleased with the facilities and the workers provided, and we look forward to continuing our partnership.
