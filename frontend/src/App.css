@@ -82,12 +82,12 @@ section.container{
     grid-area: description;
     /* margin-bottom: 1rem; */
 }
-.description::after{
+/* .description::after{
     content: '"';
 }
 .description::before{
     content: '"';
-}
+} */
 .item1{
     background-color: #2f4858;
     background-image: url(https://i.ibb.co/wNRBz1D/quotation.png);
