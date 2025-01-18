@@ -31,16 +31,19 @@ const providerRegisterController = async (req, res) => {
         .json({ message: "Provider with this number already exists." });
     }
 
+    const rating = 4;
+
     // Create a new Provider instance
     const provider = new Provider({
       name: user.name,
       username: user.username,
       email,
       work,
-      avatar: user.avatar || undefined, // Add avatar only if it exists
+      avatar: user.avatar || undefined, 
       number,
       isAvaliable,
-      price:price
+      price:price,
+      Rating: rating,
     });
 
     // Save the provider to the database
