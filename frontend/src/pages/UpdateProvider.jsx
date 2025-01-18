@@ -147,6 +147,7 @@ const UpdateProvider = ({ show }) => {
               <input
                 type="radio"
                 name="isAvaliable"
+                className="w-max"
                 value="true"
                 checked={formData.isAvaliable === true}
                 onChange={handleOnChange}
@@ -158,6 +159,7 @@ const UpdateProvider = ({ show }) => {
                 type="radio"
                 name="isAvaliable"
                 value="false"
+                className="w-max"
                 checked={formData.isAvaliable === false}
                 onChange={handleOnChange}
               />
