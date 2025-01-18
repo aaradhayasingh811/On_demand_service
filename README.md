@@ -13,6 +13,20 @@ This project is a comprehensive web application designed to manage bookings and 
 - **Responsive Frontend**: Built with React and Vite, styled with Tailwind CSS.
 - **File Uploads**: Handle file uploads using Multer and Cloudinary.
 
+### Tech Stacks
+
+- **React Js**
+- **Tailwind CSS**
+- **Material UI**
+- **Cloudinary**
+- **Responsive**
+- **Nodemailer**
+- **Node JS**
+- **Express Js**
+- **MongoDb**
+- **Multer**
+- **Dotenv**
+
 ## Table of Contents
 
 1. Backend
