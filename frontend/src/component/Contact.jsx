@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import ContactImage from '../assets/contact-us.png'; // Add your image path here
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import ContactImage from '../assets/contact-us.png';
+import { Link } from 'react-router-dom'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
