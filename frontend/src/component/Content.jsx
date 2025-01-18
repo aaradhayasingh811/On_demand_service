@@ -28,7 +28,7 @@ const Content = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { src: cleaning, value: "Cleaning", work: "cleaning" },
+    { src: cleaning, value: "Cleaning", work: "cleaner" },
     { src: plumber, value: "Plumber", work: "plumber" },
     { src: mechanic, value: "Mechanic", work: "mechanic" },
     { src: electrician, value: "Electrician", work: "electrician" },
