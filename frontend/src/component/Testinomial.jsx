@@ -6,7 +6,7 @@ const Testinomial = () => {
     <>
       <section className="testimonials bg-gradient-to-r from-[#f9f9f9] to-[#fff7e1]">
         <h1 className="heading text-5xl text-center font-[700] text-[#2f4f4f] py-4">Testimonials 📋</h1>
-        <section className="container p-12">
+        <section className="container sm:p-12 p-4">
           <div className="item item1 rounded-lg shadow-xl transform transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-2xl">
             <img
               src="https://img.freepik.com/free-photo/picture-dissatisfied-grumpy-young-afro-american-woman-with-long-straight-hair-expressing-her-disagreement-keeping-arms-folded-looking-with-serious-skeptical-facial-expression_344912-1026.jpg?uid=R156714607&ga=GA1.1.1646366203.1721816203&semt=ais_incoming"
