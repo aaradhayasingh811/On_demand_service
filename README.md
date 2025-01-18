@@ -47,18 +47,6 @@ This project is a comprehensive web application designed to manage bookings and 
 
 ## Backend
 
-### Environment Variables
-
-The backend uses environment variables defined in the [`backend/.env`](backend/.env) file. Key variables include:
-
-- `PORT`: The port number the server listens on.
-- `ACCESS_TOKEN_SECRET`: Secret key for access tokens.
-- `REFRESH_TOKEN_SECRET`: Secret key for refresh tokens.
-- `MONGODB_URI`: MongoDB connection string.
-- `CLOUD_NAME`, `API_KEY`, `API_SECRET`: Cloudinary configuration for file uploads.
-- `CLIENT_URL`: URL of the frontend client.
-- `USER_EMAIL`, `USER_PASS`: Email credentials for sending emails.
-
 ### App Initialization
 
 The main application is initialized in [`backend/app.js`](backend/app.js). It sets up middleware, static file serving, and routes.
