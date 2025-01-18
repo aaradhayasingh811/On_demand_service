@@ -12,6 +12,8 @@ import ProfilePagePro from './pages/ProfilePagePro'
 // import AllAppointment from './pages/AllAppointment'
 import AllProviderAppointment from './pages/AllProviderAppointment'
 import ProviderProfilePage from './pages/ProviderProfilePage'
+import ContactPage from './pages/ContactPage'
+import TestinomialPage from './pages/TestinomialPage'
 const App = () => {
   return (
     <>
@@ -20,6 +22,8 @@ const App = () => {
       <Route exact path="/" element={<Home/>} />
       <Route exact path="/register" element={<RegisterPage/>} />
       <Route exact path="/login" element={<LoginPage/>} />
+      <Route exact path="/contact" element={<ContactPage/>} />
+      <Route exact path="/testinomial" element={<TestinomialPage/>} />
       <Route exact path="/dashboard/:email/:people" element={<Dashboard/>} />
       <Route exact path="/dashboard/profile/:email/:people" element={<Profilepage/>} />
       <Route exact path="/dashboard/profile/provider/:email/:people" element={<ProviderProfilePage/>} />

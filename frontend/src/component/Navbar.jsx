@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between sm:ms-14">
         <img src={logo} alt="Logo" className="w-16 h-16 mr-4" />
         <Link
-          to="/"
+          to="/contact"
           className="sm:hidden block bg-[#fe4b01] w-max text-white text-sm font-medium py-2 px-4 rounded"
         >
           Contact
@@ -37,7 +37,7 @@ const Navbar = () => {
           About
         </Link> */}
         <Link
-          to="/blog"
+          to="/testinomial"
           className="text-lg font-medium text-center text-gray-700 hover:text-[#fe4b01] transition"
         >
           Testinomial
@@ -47,7 +47,7 @@ const Navbar = () => {
       {/* Contact Button */}
       <div className="hidden sm:flex justify-end sm:me-8">
         <Link
-          to="/"
+          to="/contact"
           className="bg-[#fe4b01] text-white text-center text-sm font-medium py-2 px-4 rounded shadow hover:bg-[#e44301] transition w-max"
         >
           Contact
