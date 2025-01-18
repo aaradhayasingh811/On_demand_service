@@ -142,6 +142,5 @@ Pages are located in the [`frontend/src/pages`](frontend/src/pages) directory:
 
 Assets such as images are located in the [`frontend/src/assets`](frontend/src/assets) directory.
 
-## Additional Information
+Home Page Looks![Screenshot 2025-01-19 000253](https://github.com/user-attachments/assets/9bdc4824-aa67-4438-832f-de1636ae7f3d)
 
-For more details on specific files or functions, refer to the respective file paths provided in the documentation.
